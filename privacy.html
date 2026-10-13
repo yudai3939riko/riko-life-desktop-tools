@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – RIKO LIFE Desktop Tools</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>プライバシーポリシー</h1>
+<p class="sub">RIKO LIFE Desktop Tools ／ 制定日：2026年10月13日</p>
+
+<p>このポリシーは、RIKO LIFE SHOP が自社の業務のためだけに使用する Windows デスクトップツール「RIKO LIFE Desktop Tools」（撮影写真差し替えツール・送料確定転記ツール）が、Google ユーザーデータをどのように取得・使用・保存・共有するかを説明します。本ツールは一般向けのサービスではなく、利用者は RIKO LIFE SHOP 自身の Google アカウントのみです。</p>
+
+<h2>1. 取得する Google ユーザーデータ</h2>
+<ul>
+<li>Google の Gmail API を使用し、権限（scope）は <code>https://www.googleapis.com/auth/gmail.modify</code> のみを使用します。</li>
+<li>Gmail の中から、業務で利用している撮影・発送代行サービス（AUCREVO）の送信元から届いた通知メールだけを検索し、送信元・件名・受信日時を確認します。</li>
+<li>対象の通知メール（撮影データ納品・海外発送完了）についてのみ、本文（テキスト）を読み取ります。それ以外のメールの本文は読み取りません。添付ファイルは読み取りません。</li>
+</ul>
+
+<h2>2. 使用目的</h2>
+<ul>
+<li><strong>撮影写真差し替えツール</strong>：通知メールの本文から、撮影された商品の管理番号・注文番号の一覧を読み取り、受信日を撮影日として扱います。これらは、撮影写真と出品商品を正しく対応させるための照合にだけ使います。</li>
+<li><strong>送料確定転記ツール</strong>：通知メールの本文から、注文番号・料金の明細・配送方法・追跡番号・商品名を読み取り、確定送料の計算に使います。</li>
+<li>正常に処理し終えた通知メールを Gmail のゴミ箱へ移動するために使用します（利用者が設定で有効にした場合のみ）。完全削除・送信・作成・ラベル変更は行いません。</li>
+<li>Google ユーザーデータの利用は、上記のツールの動作に必要な範囲に限ります。</li>
+</ul>
+
+<h2>3. 保存場所と保存期間</h2>
+<ul>
+<li>OAuth の認証情報（Refresh Token）は、利用者の Windows PC 上に Windows DPAPI で暗号化して保存します。同じ PC・同じ Windows ユーザー以外では復号できません。アクセストークンは保存せず、必要なときに Refresh Token から取得します。</li>
+<li>メール本文そのものは処理中にのみ使用し、ファイルとして保存しません。</li>
+<li>処理の記録として、メールの ID・受信日時・注文番号・管理番号・送料・追跡番号・商品名・処理結果のうち必要な項目を、利用者の PC 上のツールのフォルダに保存します。</li>
+<li>これらの記録は自動では削除されず、利用者が削除するまで PC 上に残ります（削除方法は 6. を参照）。</li>
+<li>開発者が運営するサーバーへ Google ユーザーデータを送信・保存することはありません。</li>
+</ul>
+
+<h2>4. 第三者への提供・外部サービスへの送信</h2>
+<ul>
+<li>Google ユーザーデータを第三者へ販売しません。</li>
+<li>Google ユーザーデータを広告目的に使用しません。</li>
+<li>Google ユーザーデータを AI・機械学習モデルの学習に使用しません。</li>
+<li>メール本文・添付ファイルを、外部のサービスへ送信しません。</li>
+<li>メールから読み取った項目のうち、次のものだけを RIKO LIFE SHOP 自身のアカウントの業務サービスで使用します。
+  <ul>
+  <li>送料確定転記ツール：RIKO LIFE SHOP の Google スプレッドシートの該当する注文の行に、通知メールの受信日と、メールの料金明細から計算した確定送料を書き込みます。SpeedPAK の場合は、RIKO LIFE SHOP の CPaSS アカウントで注文番号を検索します。</li>
+  <li>撮影写真差し替えツール：Google スプレッドシートは読み取りのみで、メールの内容は書き込みません。</li>
+  <li>両ツール：RIKO LIFE SHOP 自身の Chatwork ルームへ、処理件数・注文番号・要確認の理由を通知します。</li>
+  </ul>
+</li>
+<li>上記以外の第三者へ Google ユーザーデータを提供しません。</li>
+</ul>
+
+<h2>5. Google API Services User Data Policy への準拠</h2>
+<p>本ツールによる Google API から受け取った情報の使用および他のアプリへの転送は、Limited Use 要件を含む <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a> に従います。</p>
+
+<h2>6. アクセスの取り消し・データの削除</h2>
+<ul>
+<li>Google アカウントの「サードパーティ製のアプリとサービス」（<a href="https://myaccount.google.com/connections">https://myaccount.google.com/connections</a>）から、いつでも本ツールの Gmail へのアクセス権を取り消せます。</li>
+<li>利用者の PC 上の認証情報ファイル（<code>gmail_token.json</code>）と、ツールのフォルダ内の処理記録（<code>logs</code> フォルダ、<code>.jsonl</code>・<code>status.json</code> などの記録ファイル）は、利用者がいつでも削除できます。</li>
+</ul>
+
+<h2>7. お問い合わせ</h2>
+<p>RIKO LIFE SHOP ／ rikolife.shop.ebay01@gmail.com</p>
+
+<h2 lang="en">English summary</h2>
+<div lang="en" class="lang">
+<p>RIKO LIFE Desktop Tools are Windows desktop tools used only internally by RIKO LIFE SHOP with its own Google account. They use the Gmail API with the <code>https://www.googleapis.com/auth/gmail.modify</code> scope only. The tools search Gmail only for notification emails from the business service RIKO LIFE SHOP uses (AUCREVO), read the sender, subject, received date and text body of those notification emails only (no other emails' bodies, no attachments), and move successfully processed notification emails to Trash when the user enables that setting. Messages are never permanently deleted, sent or created.</p>
+<p>Data read from the emails (order numbers, management numbers, fee lines, shipping method, tracking number, item name) is used only to match photos to listings and to calculate final shipping costs. The OAuth refresh token is stored only on the user's Windows PC, encrypted with Windows DPAPI; access tokens are not stored. Email bodies are not saved. Processing records (message ID, received date, order number, management number, shipping cost, tracking number, item name, result) are kept in the tool folder on the user's PC until the user deletes them. No Google user data is sent to or stored on any developer-operated server.</p>
+<p>Google user data is not sold, not used for advertising, and not used to train AI or machine-learning models. Email bodies and attachments are not sent to any external service. Only these derived items are used in RIKO LIFE SHOP's own business accounts: the shipping tool writes the received date and the calculated shipping cost to the matching order row of RIKO LIFE SHOP's Google Sheets spreadsheet and, for SpeedPAK, searches the order number in RIKO LIFE SHOP's CPaSS account; both tools send counts, order numbers and review reasons to RIKO LIFE SHOP's own Chatwork room. No other third party receives Google user data. The use and transfer of information received from Google APIs will adhere to the Google API Services User Data Policy, including the Limited Use requirements. Access can be revoked at any time at https://myaccount.google.com/connections, and local token and record files can be deleted by the user. Contact: rikolife.shop.ebay01@gmail.com</p>
+</div>
+
+<footer><a href="index.html">RIKO LIFE Desktop Tools ホーム</a></footer>
+</main>
+</body>
+</html>
